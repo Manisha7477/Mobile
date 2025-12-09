@@ -10,10 +10,6 @@ interface FormActionsPhotoApprovalProps {
   onApprove: () => void;
   inward_id: string;
 }
-
-
-
-
 const FormActionsForRejectApprove: React.FC<FormActionsPhotoApprovalProps> = ({
   onCancel,
   onPrintPreview,
