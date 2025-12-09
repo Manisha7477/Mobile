@@ -1,0 +1,60 @@
+{
+  "compilerOptions": {    
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+
+    "declaration": false,
+    "sourceMap": true,
+      
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "ts-node":{
+    "compilerOptions": {"module": "CommonJS"}
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/PlantPerformance/Taiz/Genset/GeneratorUsageChart.tsx", "src/utils/data/OperationalNexus", "src/routes/PlantPerformance/Generator/DetailPage/GeneratorThdVoltageDetail.tsx",],
+  "exclude": ["node_modules"]
+}
+
+
+// {
+//   "compilerOptions": {
+//     "target": "es5",                      // You can keep es5 as target, no problem
+//     "lib": ["dom", "dom.iterable", "esnext"],
+//     "allowJs": true,
+//     "skipLibCheck": true,
+//     "strict": true,
+//     "noEmit": true,
+//     "esModuleInterop": true,
+//     "module": "ESNext",                    // Ensure you're using ESNext module
+//     "moduleResolution": "node16",          // Updated to node16 for better module resolution
+//     "resolveJsonModule": true,
+//     "isolatedModules": true,
+//     "jsx": "preserve",
+//     "incremental": true,
+//     "declaration": false,
+//     "sourceMap": true,
+//     "baseUrl": ".",
+//     "paths": {
+//       "@/*": ["./src/*"]
+//     }
+//   },
+//   "ts-node": {
+//     "compilerOptions": { "module": "CommonJS" }
+//   },
+//   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+//   "exclude": ["node_modules"]
+// }
