@@ -1,4 +1,4 @@
-name: Frontend CI/CD Deployment
+name: Test Frontend Deployment
 
 on:
   push:
@@ -13,17 +13,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v0.1.9
+      - name: Deploy via SSH (Test)
+        uses: appleboy/ssh-action@v0.1.15
         with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
+          host: ${{ secrets.TEST_SERVER_IP }}
+          username: ${{ secrets.TEST_SERVER_USER }}
+          key: ${{ secrets.TEST_SERVER_SSH_KEY }}
           port: 2222
-          timeout-minutes: 60          # connection timeout in minutes
-          command_timeout: 30m         # command timeout with proper duration unit
+          timeout-minutes: 60
+          command_timeout: 30
           script: |
-            cd ~/petronet/frontend/frontend
+            cd ~/petronet/frontend/test-frontend   # Use a test folder
 
             echo "Fetching latest code..."
             git fetch --all
@@ -34,5 +34,5 @@ jobs:
             docker compose build --progress=plain
             docker compose up -d
 
-            echo "Frontend deployed successfully!"
+            echo "Test frontend deployed successfully!"
             exit 0
